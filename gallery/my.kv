@@ -1,4 +1,5 @@
 #:kivy 2.0.0
+#:import win kivy.core.window
 
 <MyScreen>:
     content: content
@@ -10,3 +11,26 @@
     Carousel:
         id: carousel
         direction: 'right'
+
+<OverviewScrollView>:
+    grid_layout: grid_layout
+    GridLayout:
+        id: grid_layout
+        rows: 1
+        spacing: win.Window.width * 0.01
+        size_hint_x: None
+        width: self.minimum_width
+
+<OverviewButton>:
+    image: image
+    size_hint_x: None
+    width: win.Window.width * 0.25
+    text_size: None, self.height * 0.8
+    halign: 'left'
+    valign: 'bottom'
+    Image:
+        id: image
+        size: 30000, self.parent.height
+        center_x: self.parent.center_x
+        allow_stretch: True
+        # center_y: self.parent.center_y

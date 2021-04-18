@@ -2,7 +2,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen, ScreenManager, FadeTransition
 
 from gallery.stage import StageLayout
-
+from gallery.overview import OverviewScrollView
 class MyScreen(Screen):
     content = ObjectProperty()
     
@@ -19,6 +19,6 @@ class MyScreenManager(ScreenManager):
         # self.overview_screen = MyScreen('overview')
         # self.stage_screen = MyScreen('stage')
 
-        self.add_widget(MyScreen('overview', StageLayout()))
+        self.add_widget(MyScreen('overview', OverviewScrollView()))
         self.add_widget(MyScreen('stage', StageLayout()))
-        self.current = 'stage'
+        self.current = 'overview'
